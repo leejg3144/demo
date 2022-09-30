@@ -1,18 +1,20 @@
 package com.example.demo.domain.post.entity;
 
+import com.example.demo.common.entity.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 
-@Builder
+@SuperBuilder
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "POST")
-public class Post {
+public class Post extends BaseEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "POST_SEQ", length = 25)
